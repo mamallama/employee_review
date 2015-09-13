@@ -14,4 +14,7 @@ class Department
     emp.map{|emp| emp.name }
   end
 
+  def salaries_in_dept
+  @employees.reduce(0){|sum, emp| emp.salary + sum}
+  end
 end

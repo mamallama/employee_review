@@ -44,16 +44,23 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_get_department_name
-    dept = Department.new("Auror Office")
-    assert_equal "Auror Office", dept.dept
+    dept = Department.new("Animagus Registry")
+    assert_equal "Animagus Registry", dept.dept
   end
 
-  # def test_get_total_salary_in_dept
-  # end
-  #
+  def test_get_total_salary_in_dept
+    dept = Department.new("Department of Magical Education") #new dept, employees w/salaries
+    salary = Employee.new(name: "Luna", salary: 38000)
+    assert dept.add_employee(salary)
+    salary = Employee.new(name: "Draco", salary: 38000)
+    assert dept.add_employee(salary)
+    assert_equal 76000, dept.salaries_in_dept #make sure things add up, that block for sum is correct
+  end
+
   # def test_add_employee_review_text
-  # end
   #
+  # end
+
   # def test_mark_employee_satisfatory_not
   # end
   #
