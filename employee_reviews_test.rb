@@ -33,4 +33,29 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal [name], dept.employees
   end
 
+  def test_get_employee_name
+    employee = Employee.new(name: "Ron")
+    assert_equal "Ron", employee.name
+  end
+
+  # def test_get_employee_salary
+  # end
+  #
+  # def test_get_department_name
+  # end
+  #
+  # def test_get_total_salary_in_dept
+  # end
+  #
+  # def test_add_employee_review_text
+  # end
+  #
+  # def test_mark_employee_satisfatory_not
+  # end
+  #
+  # def test_give_raise_to_individual
+  # end
+  #
+  # def test_give_raise_to_dept_employees
+  # end
 end
