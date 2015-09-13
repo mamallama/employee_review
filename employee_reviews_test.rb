@@ -43,9 +43,11 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal 38000, employee.salary
   end
 
-  # def test_get_department_name
-  # end
-  #
+  def test_get_department_name
+    dept = Department.new("Auror Office")
+    assert_equal "Auror Office", dept.dept
+  end
+
   # def test_get_total_salary_in_dept
   # end
   #
