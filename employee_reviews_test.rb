@@ -27,9 +27,10 @@ class EmployeeReviewsTest < Minitest::Test
   end
 
   def test_add_employee_to_dept
-    employee = Employee.new("Hermione")
-    dept = Department.new("SPEW")
-    assert_equal #employee is in dept. HOW? block... .select?
+    name = Employee.new(name:"Hermione")
+    dept = Department.new("Department of Magical Law Enforcement")
+    assert dept.add_employee(name)
+    assert_equal [name], dept.employees
   end
 
 end
