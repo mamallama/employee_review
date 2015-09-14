@@ -13,3 +13,7 @@ require './department'
 # Foreign Affairs and Sports Department
 # Department of Mysteries
 # Muggle-Born Registration Commision's Office
+
+# def get_user_input
+# gets.chomp
+# end

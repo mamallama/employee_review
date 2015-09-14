@@ -57,9 +57,30 @@ class EmployeeReviewsTest < Minitest::Test
     assert_equal 76000, dept.salaries_in_dept #make sure things add up, that block for sum is correct
   end
 
-  # def test_add_employee_review_text
-  #
-  # end
+  def test_add_employee_review_text
+    employee = Employee.new(name: "Umbridge")
+    review = Employee.new(name: "Umbridge", review_text: "Thus far, there have been two concerns
+     over Umbridge's performance, and both have been discussed with her in internal meetings.
+     First, in some cases, Umbridge takes longer to complete tasks than would normally be expected.
+     This most commonly manifests during development on existing applications, but can sometimes occur
+     during development on new projects, often during tasks shared with Cornelius.
+     In order to accommodate for these preferences, Umbridge has been putting more time into fewer projects, which has gone well.
+     Second, while in conversation, Umbridge has a tendency to interrupt, talk over others, and increase her volume when in disagreement.
+     In meetings, she also can dwell on potential issues even if the other attendees have clearly ruled the issue out, and can sometimes get off topic
+     (mostly voicing her concerns over muggle-borns).").review_text
+    assert_equal "Thus far, there have been two concerns
+     over Umbridge's performance, and both have been discussed with her in internal meetings.
+     First, in some cases, Umbridge takes longer to complete tasks than would normally be expected.
+     This most commonly manifests during development on existing applications, but can sometimes occur
+     during development on new projects, often during tasks shared with Cornelius.
+     In order to accommodate for these preferences, Umbridge has been putting more time into fewer projects, which has gone well.
+     Second, while in conversation, Umbridge has a tendency to interrupt, talk over others, and increase her volume when in disagreement.
+     In meetings, she also can dwell on potential issues even if the other attendees have clearly ruled the issue out, and can sometimes get off topic
+     (mostly voicing her concerns over muggle-borns).", review
+    assert employee.give_review(review)
+    assert_equal [review], employee.reviews
+
+  end
 
   # def test_mark_employee_satisfatory_not
   # end
